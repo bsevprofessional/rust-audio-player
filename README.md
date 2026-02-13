@@ -36,19 +36,17 @@ Make sure you have a folder for your audio files:
 
 test_files/
 
-
 Place your audio files inside this folder.
 
 Example project layout:
 
 rust-audio-player/
 ├── audio_player/
-│ ├── Cargo.toml
-│ └── src/
+│   ├── Cargo.toml
+│   └── src/
 └── test_files/
-├── song1.mp3
-└── song2.wav
-
+    ├── song1.mp3
+    └── song2.wav
 
 ---
 
@@ -56,74 +54,77 @@ rust-audio-player/
 
 From the root of the repository, navigate to the player directory:
 
-```bash
-c   d audio_player
-```
+cd audio_player
+
 Then run:
-```bash
-    cargo run
-```
+
+cargo run
 
 Cargo will compile the project and start the player.
-Usage
-Select Output Device
+
+---
+
+## Usage
+
+### Select Output Device
 
 When the program starts, you will see a list of available audio devices.
 
 Use:
 
-    ↑ / ↓ to move
-
-    Enter to select
+- ↑ / ↓ to move
+- Enter to select
 
 If you do not hear audio, try selecting pipewire or another system device.
-Main Menu
+
+---
+
+### Main Menu
 
 After selecting a device, the main menu will appear.
 
 Navigate using:
 
-    ↑ / ↓
-
-    Enter
+- ↑ / ↓
+- Enter
 
 Menu options change depending on playback state.
 
 Available options include:
 
-    Select file and play
+- Select file and play
+- Pause / Resume
+- Stop
+- Volume +
+- Volume -
+- Quit
 
-    Pause / Resume
+---
 
-    Stop
-
-    Volume +
-
-    Volume -
-
-    Quit
-
-Select Audio File
+### Select Audio File
 
 Choose Select file and play to browse files in ../test_files/.
 
 Use the arrow keys and Enter to select a file.
 
 Press q or Esc to return to the main menu.
-Playback Controls
+
+---
+
+### Playback Controls
 
 While a song is playing:
 
-    Pause / Resume — Toggle playback
-
-    Stop — Stop current track
-
-    Volume + / - — Adjust volume
-
-    Quit — Exit the player
+- Pause / Resume — Toggle playback
+- Stop — Stop current track
+- Volume + / - — Adjust volume
+- Quit — Exit the player
 
 Current volume is displayed as a percentage in the header.
-Progress Bar
+
+---
+
+### Progress Bar
 
 During playback, the header shows playback progress:
 
@@ -131,30 +132,37 @@ Time   : 01:23 [######------] 03:45
 
 This displays:
 
-    Current playback time
+- Current playback time
+- Visual progress bar
+- Total track length
 
-    Visual progress bar
+---
 
-    Total track length
+## Keyboard Controls
 
-Keyboard Controls
-Key	Action
-↑ / ↓	Navigate menus
-Enter	Select option
-q / Esc	Back (file selection)
-Ctrl + C	Force quit
-Troubleshooting
-No Sound
+Key        Action
+↑ / ↓      Navigate menus
+Enter      Select option
+q / Esc    Back (file selection)
+Ctrl + C   Force quit
+
+---
+
+## Troubleshooting
+
+### No Sound
 
 Try selecting a different output device when prompted (for example: pipewire instead of default).
-No Files Found
+
+### No Files Found
 
 Make sure your audio files are located in:
 
 test_files/
 
 relative to the audio_player/ directory.
-Build Issues
+
+### Build Issues
 
 If you encounter build errors, update Rust and rebuild:
 
@@ -162,17 +170,24 @@ rustup update
 cargo clean
 cargo run
 
-Notes
+---
 
-    This project uses rodio for audio playback.
+## Notes
 
-    Terminal UI is built using crossterm.
+- This project uses rodio for audio playback.
+- Terminal UI is built using crossterm.
+- Audio duration detection uses symphonia.
 
-    Audio duration detection uses symphonia.
+---
 
-License
+## License
 
 MIT License
-Author Bruno Gomez-Severino
+
+---
+
+## Author
+
+Bruno Gomez-Severino
 
 Created as a learning project for Rust audio and terminal UI development.
