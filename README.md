@@ -57,11 +57,12 @@ rust-audio-player/
 From the root of the repository, navigate to the player directory:
 
 ```bash
-cd audio_player
-
+c   d audio_player
+```
 Then run:
-
-cargo run
+```bash
+    cargo run
+```
 
 Cargo will compile the project and start the player.
 Usage
