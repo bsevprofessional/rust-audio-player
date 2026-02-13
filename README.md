@@ -32,22 +32,8 @@ Supported audio formats depend on your system and enabled codecs, but typically 
 
 ## Setup
 
-Make sure you have a folder for your audio files:
-
-test_files/
-
-Place your audio files inside this folder.
-
-Example project layout:
-
-rust-audio-player/
-├── audio_player/
-│   ├── Cargo.toml
-│   └── src/
-└── test_files/
-    ├── song1.mp3
-    └── song2.wav
-
+Place your audio files inside 
+./audio_player/test_files/
 ---
 
 ## How to Run
